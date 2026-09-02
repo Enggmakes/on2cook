@@ -2001,8 +2001,35 @@ img {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .site-footer {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+  .footer-upper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
   .footer-links-grid {
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1rem;
+    width: 100%;
+  }
+  .footer-link-col:last-child {
+    grid-column: span 2;
+    border-top: 1px solid rgba(232, 227, 215, 0.1);
+    padding-top: 1rem;
+  }
+  .footer-link-col:last-child ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
   }
   .modal-card__grid {
     grid-template-columns: 1fr;
@@ -2016,9 +2043,6 @@ img {
 @media (max-width: 480px) {
   .site-header__inner {
     padding: 0 0.75rem;
-  }
-  .footer-links-grid {
-    grid-template-columns: 1fr;
   }
   .editorial-card-grid {
     grid-template-columns: 1fr;
