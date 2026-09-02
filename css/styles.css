@@ -40,6 +40,16 @@
   padding: 0;
 }
 
+::selection {
+  background: var(--ink-primary);
+  color: var(--brand-red);
+}
+
+::-moz-selection {
+  background: var(--ink-primary);
+  color: var(--brand-red);
+}
+
 [hidden] {
   display: none !important;
 }
