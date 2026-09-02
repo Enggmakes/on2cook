@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On2Cook Ambassador Network | National Culinary Collective</title>
+  <meta name="description" content="Official On2Cook Ambassador Network — exploring culinary leaders, master chefs, and commercial kitchen partners across India.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       Top Editorial Header
+       =================================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <!-- Brand Logo -->
+      <a href="#" class="brand" aria-label="On2Cook Ambassador Network">
+        <span class="brand__logo-slot">
+          <img src="assets/logo.png" alt="On2Cook" class="brand__logo-img" onerror="this.src='assets/favicon.png'">
+        </span>
+      </a>
+
+      <!-- Editorial Column Navigation Links -->
+      <nav class="header-nav">
+        <a href="#mapSection" class="header-nav__link"><span>01</span> Coverage Map</a>
+        <a href="#rosterSection" class="header-nav__link"><span>02</span> Ambassador Roster</a>
+        <a href="#roiSection" class="header-nav__link"><span>03</span> ROI Calculator</a>
+        <a href="https://on2cook.com/#technology" target="_blank" rel="noopener" class="header-nav__link"><span>04</span> Technology</a>
+      </nav>
+
+      <!-- Search & Action Controls -->
+      <div class="header-controls">
+        <div class="header-search">
+          <span class="header-search__icon" data-icon="search"></span>
+          <input type="search" id="searchInput" placeholder="Search code, name, city…" autocomplete="off">
+          <button type="button" id="searchClear" class="search-clear" aria-label="Clear search" hidden>&times;</button>
+        </div>
+
+        <div class="filter-wrap">
+          <button type="button" id="filterToggle" class="filter-btn" aria-expanded="false">
+            <span data-icon="sliders"></span>
+            <span>Filters</span>
+            <span class="filter-btn__badge" id="filterBadge" hidden>0</span>
+          </button>
+
+          <div class="filter-panel" id="filterPanel" hidden>
+            <div class="filter-panel__head">
+              <span class="filter-panel__title">Filter Network</span>
+              <button type="button" id="filterClear" class="filter-clear" hidden>Clear all</button>
+            </div>
+
+            <div class="filter-panel__search">
+              <span data-icon="search"></span>
+              <input type="search" id="filterSearchInput" placeholder="Quick filter by city, state, brand…" autocomplete="off">
+            </div>
+
+            <div class="filter-panel__chips" id="filterChips" hidden></div>
+
+            <div class="filter-panel__columns">
+              <div class="filter-group">
+                <p class="filter-group__label">State</p>
+                <div class="filter-group__search">
+                  <span data-icon="search"></span>
+                  <input type="search" id="stateFilterSearch" placeholder="Search states" autocomplete="off">
+                </div>
+                <div class="filter-checklist" id="stateChecklist"></div>
+              </div>
+              <div class="filter-group">
+                <p class="filter-group__label">City</p>
+                <p class="filter-group__hint" id="cityGroupHint" hidden></p>
+                <div class="filter-group__search">
+                  <span data-icon="search"></span>
+                  <input type="search" id="cityFilterSearch" placeholder="Search cities" autocomplete="off">
+                </div>
+                <div class="filter-checklist" id="cityChecklist"></div>
+              </div>
+            </div>
+
+            <div class="filter-panel__foot">
+              <button type="button" id="filterDone" class="filter-done">Show results</button>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYjXp04t4SG0Cd6Xc40GOHC919lkLdkkOXzC5dSBlHEo2rsw/viewform" target="_blank" rel="noopener" class="btn-join">
+          Join Network <span>↗</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       Hero Section — Warm Beige Editorial Aesthetic
+       =================================================================== -->
+  <section class="hero-editorial">
+    <div class="hero-grid">
+
+      <!-- Left Big Title Block -->
+      <div class="hero-col hero-col--main">
+        <div class="hero-tagline-box">
+          <span class="hero-bullet">●</span>
+          <span>National Ambassador Network</span>
+          <span class="hero-tagline-desc">Connecting culinary innovators and commercial kitchen operators across India.</span>
+        </div>
+
+        <h1 class="hero-title">
+          CHEF'S<br>NETWORK
+        </h1>
+
+        <div class="hero-desc-strip">
+          <p>Every highlighted state features active On2Cook ambassadors pioneering the future of fast, energy-efficient commercial cooking.</p>
+        </div>
+      </div>
+
+      <!-- Center Feature Block (Editorial Column) -->
+      <div class="hero-col hero-col--features">
+        <div class="vertical-tab-bar">
+          <span class="vertical-tab">COMMERCIAL KITCHENS</span>
+          <span class="vertical-tab">CLOUD KITCHENS</span>
+          <span class="vertical-tab">MASTER CHEFS</span>
+          <span class="vertical-tab is-active">DUAL-ENERGY TECH</span>
+        </div>
+      </div>
+
+      <!-- Right Visual & Stats Block (Clean Culinary Frame) -->
+      <div class="hero-col hero-col--visual">
+        <div class="hero-card-preview">
+          <div class="hero-preview-top">
+            <span class="hero-badge-pill">ACTIVE HUBS</span>
+            <span class="live-dot-pulse">● LIVE</span>
+          </div>
+
+          <div class="hero-hub-list">
+            <div class="hub-item">
+              <div class="hub-item__dot"></div>
+              <div class="hub-item__info">
+                <strong>Maharashtra</strong>
+                <span>Ahilyanagar · Aryan Wagh</span>
+              </div>
+              <span class="hub-tag">Cloud Kitchen</span>
+            </div>
+            <div class="hub-item">
+              <div class="hub-item__dot"></div>
+              <div class="hub-item__info">
+                <strong>Gujarat</strong>
+                <span>Surat · Aishwarya</span>
+              </div>
+              <span class="hub-tag">Catering</span>
+            </div>
+          </div>
+
+          <div class="hero-card-meta">
+            <span class="hero-card-code">ON2COOK · NATIONAL</span>
+            <span class="hero-card-label">CULINARY COLLECTIVE</span>
+          </div>
+        </div>
+
+        <div class="hero-stats-row" id="headerStats" aria-live="polite">
+          <div class="stat-box">
+            <span class="stat-box__val" id="statTotal">&mdash;</span>
+            <span class="stat-box__lbl">Ambassadors</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-box__val" id="statStates">&mdash;</span>
+            <span class="stat-box__lbl">States</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-box__val" id="statCities">&mdash;</span>
+            <span class="stat-box__lbl">Cities</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Main Editorial Directory Console
+       =================================================================== -->
+  <section class="directory-section" id="rosterSection">
+
+    <!-- Section Headline & Category Tabs -->
+    <div class="section-headline-bar">
+      <div class="section-headline-left">
+        <p class="section-eyebrow">EXPLORE DIRECTORY</p>
+        <h2 class="section-title">DISCOVER OUR<br>AMBASSADORS</h2>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs">
+        <button type="button" class="cat-tab is-active" data-cat="all">ALL MEMBERS</button>
+        <button type="button" class="cat-tab" data-cat="cloud">CLOUD KITCHEN</button>
+        <button type="button" class="cat-tab" data-cat="catering">CATERING</button>
+        <button type="button" class="cat-tab" data-cat="restaurant">RESTAURANT</button>
+      </div>
+    </div>
+
+    <!-- 2-Column Grid: Map Panel & Roster Cards -->
+    <div class="directory-grid" id="mapSection">
+
+      <!-- Left Column: Interactive Coverage Map -->
+      <aside class="map-editorial-panel" aria-label="Ambassador coverage map of India">
+        <div class="map-editorial-head">
+          <div class="map-title-row">
+            <h3 class="map-editorial-title">Coverage Map</h3>
+            <button type="button" id="resetMapBtn" class="reset-btn" hidden>&larr; All states</button>
+          </div>
+          <p class="map-editorial-hint">Select a state on the map to filter city ambassadors</p>
+        </div>
+
+        <div class="map-wrap">
+          <svg id="indiaMap" viewBox="0 0 612 696" role="img" aria-label="Map of India showing ambassador coverage by state"></svg>
+          <div class="map-tooltip" id="mapTooltip" hidden></div>
+        </div>
+
+        <div class="map-editorial-foot">
+          <div class="map-legend">
+            <span class="map-legend__gradient"></span>
+            <span class="map-legend__text">Ambassador Density</span>
+          </div>
+          <span class="live-indicator"><span class="live-dot"></span> Live Sync</span>
+        </div>
+      </aside>
+
+      <!-- Right Column: Roster & City Chips -->
+      <div class="roster-editorial-panel" aria-label="Ambassador roster">
+
+        <!-- 3-Step Breadcrumb Bar -->
+        <div class="flow-bar">
+          <ol class="flow-steps" id="flowSteps">
+            <li class="flow-steps__step is-active" data-step="1"><span>01</span> STATE</li>
+            <li class="flow-steps__arrow">&rarr;</li>
+            <li class="flow-steps__step" data-step="2"><span>02</span> CITY</li>
+            <li class="flow-steps__arrow">&rarr;</li>
+            <li class="flow-steps__step" data-step="3"><span>03</span> ROSTER</li>
+          </ol>
+
+          <button type="button" id="viewFullRosterBtn" class="view-all-btn">
+            View All Members <span data-icon="externalLink"></span>
+          </button>
+        </div>
+
+        <div class="drill-info-bar">
+          <div>
+            <h3 class="drill-state-title" id="drillTitle">All Ambassadors</h3>
+            <p class="drill-state-meta" id="drillMeta">Pick a state on the map or click any profile card below.</p>
+          </div>
+        </div>
+
+        <!-- City Filter Chips -->
+        <div class="city-chips" id="cityChips" hidden></div>
+
+        <!-- Sleek & Proportionate Roster Card Grid -->
+        <div class="editorial-card-grid" id="rosterGrid"></div>
+
+        <button type="button" id="loadMoreBtn" class="load-more-btn" hidden>
+          Load More Ambassadors &darr;
+        </button>
+
+        <p class="empty-state" id="emptyState" hidden>No ambassadors found matching this filter.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================================================
+       Interactive ROI & Energy Savings Calculator (Cloned Directly In-App)
+       =================================================================== -->
+  <section class="roi-section" id="roiSection">
+    <div class="roi-inner">
+      <div class="roi-header">
+        <p class="roi-eyebrow">SAVINGS CALCULATOR</p>
+        <h2 class="roi-title">CALCULATE YOUR KITCHEN ROI</h2>
+        <p class="roi-sub">See how much cooking time, gas, and labor costs On2Cook saves your commercial kitchen every month.</p>
+      </div>
+
+      <div class="roi-calculator-card">
+        <div class="roi-grid">
+          
+          <!-- Left: Input Controls -->
+          <div class="roi-inputs">
+            <div class="roi-preset-bar">
+              <span class="roi-preset-label">KITCHEN TYPE:</span>
+              <button type="button" class="roi-preset-btn is-active" data-orders="150" data-time="20" data-bill="25000" data-staff="3">Cloud Kitchen</button>
+              <button type="button" class="roi-preset-btn" data-orders="300" data-time="25" data-bill="45000" data-staff="5">Restaurant</button>
+              <button type="button" class="roi-preset-btn" data-orders="500" data-time="30" data-bill="75000" data-staff="8">Catering / Banquet</button>
+              <button type="button" class="roi-preset-btn" data-orders="80" data-time="15" data-bill="15000" data-staff="2">Cafe / Bakery</button>
+            </div>
+
+            <!-- Slider 1: Daily Orders -->
+            <div class="roi-control">
+              <div class="roi-control__head">
+                <label for="inputOrders">Daily Order Volume</label>
+                <span class="roi-control__val"><strong id="valOrders">150</strong> orders / day</span>
+              </div>
+              <input type="range" id="inputOrders" min="20" max="1000" step="10" value="150" class="roi-slider">
+            </div>
+
+            <!-- Slider 2: Average Cooking Time -->
+            <div class="roi-control">
+              <div class="roi-control__head">
+                <label for="inputTime">Avg. Cooking Time per Dish</label>
+                <span class="roi-control__val"><strong id="valTime">20</strong> mins</span>
+              </div>
+              <input type="range" id="inputTime" min="5" max="60" step="1" value="20" class="roi-slider">
+            </div>
+
+            <!-- Slider 3: Monthly Gas / Electricity Bill -->
+            <div class="roi-control">
+              <div class="roi-control__head">
+                <label for="inputBill">Monthly Gas / Power Bill (₹)</label>
+                <span class="roi-control__val">₹<strong id="valBill">25,000</strong> / mo</span>
+              </div>
+              <input type="range" id="inputBill" min="5000" max="150000" step="1000" value="25000" class="roi-slider">
+            </div>
+
+            <!-- Slider 4: Kitchen Staff Count -->
+            <div class="roi-control">
+              <div class="roi-control__head">
+                <label for="inputStaff">Kitchen Staff Members</label>
+                <span class="roi-control__val"><strong id="valStaff">3</strong> chefs / cooks</span>
+              </div>
+              <input type="range" id="inputStaff" min="1" max="15" step="1" value="3" class="roi-slider">
+            </div>
+          </div>
+
+          <!-- Right: Real-time ROI & Savings Summary Display -->
+          <div class="roi-results">
+            <div class="roi-total-banner">
+              <span class="roi-total-label">TOTAL ANNUAL ESTIMATED SAVINGS</span>
+              <div class="roi-total-amount">₹<span id="resAnnualSavings">2,85,000</span></div>
+              <span class="roi-total-sub">Payback Period: <strong id="resPayback">~3.8 Months</strong></span>
+            </div>
+
+            <div class="roi-breakdown-grid">
+              <div class="roi-stat-tile">
+                <span class="roi-tile-val" id="resEnergySavings">₹17,500</span>
+                <span class="roi-tile-label">Monthly Energy Saved (70%)</span>
+              </div>
+              <div class="roi-stat-tile">
+                <span class="roi-tile-val" id="resTimeSaved">25 Hours</span>
+                <span class="roi-tile-label">Daily Kitchen Hours Saved</span>
+              </div>
+              <div class="roi-stat-tile">
+                <span class="roi-tile-val" id="resMonthlyNet">₹23,750</span>
+                <span class="roi-tile-label">Net Monthly Profit Boost</span>
+              </div>
+              <div class="roi-stat-tile">
+                <span class="roi-tile-val">2.5x</span>
+                <span class="roi-tile-label">Order Throughput Speed</span>
+              </div>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYjXp04t4SG0Cd6Xc40GOHC919lkLdkkOXzC5dSBlHEo2rsw/viewform" target="_blank" rel="noopener" class="roi-cta-btn">
+              Apply as Ambassador & Get Demo <span>↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Editorial Footer
+       =================================================================== -->
+  <footer class="site-footer">
+
+    <div class="footer-upper">
+      <div class="footer-col-main">
+        <h4 class="footer-title">FIND YOUR CULINARY INSPIRATION HERE!</h4>
+        <p class="footer-subtext">Represent your city in the national On2Cook Ambassador Network.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYjXp04t4SG0Cd6Xc40GOHC919lkLdkkOXzC5dSBlHEo2rsw/viewform" target="_blank" rel="noopener" class="footer-apply-btn">
+          JOIN US NOW <span>↗</span>
+        </a>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-link-col">
+          <p class="footer-link-head">RESOURCES</p>
+          <ul>
+            <li><a href="https://on2cook.com/#technology" target="_blank" rel="noopener">Technology</a></li>
+            <li><a href="https://on2cook.com/#product" target="_blank" rel="noopener">Product</a></li>
+            <li><a href="https://on2cook.com/#benefits" target="_blank" rel="noopener">Benefits</a></li>
+            <li><a href="https://on2cook.com/#testimonials" target="_blank" rel="noopener">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-link-col">
+          <p class="footer-link-head">GET STARTED</p>
+          <ul>
+            <li><a href="#roiSection">ROI Calculator</a></li>
+            <li><a href="https://on2cook.com/#book_a_demo" target="_blank" rel="noopener">Book a Demo</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1Wc5aZRhdHU7PAFXbVc1t6T0tMZ1oq-S7Z7BiEgfWAOk/edit" target="_blank" rel="noopener">Google Sheet</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-link-col">
+          <p class="footer-link-head">CONNECT</p>
+          <ul>
+            <li><a href="https://www.instagram.com/on2cook" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/on2cook" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/on2cook" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Massive Watermark Branding -->
+    <div class="footer-brand-watermark">
+      ON2COOK
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 On2Cook. All rights reserved. <span class="footer-divider">|</span> <span id="syncBadge" class="sync-badge">Live Google Sheet Sync</span></p>
+      <div class="footer-legal">
+        <a href="https://on2cook.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        <span>·</span>
+        <a href="https://on2cook.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ===================================================================
+       Ambassador Detail Modal
+       =================================================================== -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button type="button" class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+
+      <div class="modal-card__grid">
+        <div class="modal-card__left">
+          <div class="modal-card__id">
+            <div class="modal-card__avatar" id="modalAvatar"></div>
+            <div>
+              <h3 class="modal-card__name" id="modalName"></h3>
+              <p class="modal-card__brand" id="modalBrand"></p>
+            </div>
+          </div>
+
+          <div class="modal-card__meta">
+            <span class="modal-card__code" id="modalCode"></span>
+            <span class="modal-card__loc" id="modalLoc"></span>
+          </div>
+
+          <div class="modal-card__section" id="modalAboutSection">
+            <p class="modal-card__section-label" id="modalAboutLabel">ABOUT</p>
+            <p class="modal-card__profile" id="modalProfile"></p>
+          </div>
+
+          <div class="modal-card__stats" id="modalStats" hidden></div>
+
+          <div class="modal-card__section" id="modalSpecialtiesSection" hidden>
+            <p class="modal-card__section-label">SPECIALTIES</p>
+            <div class="modal-card__tags" id="modalSpecialties"></div>
+          </div>
+
+          <div class="modal-card__actions">
+            <a class="modal-btn modal-btn--primary" id="modalWhatsapp" href="#" target="_blank" rel="noopener" hidden>
+              <span data-icon="chat"></span> Contact on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-card__right" id="modalRight">
+          <p class="modal-card__section-label">KITCHEN / BRAND INFO</p>
+          <div class="modal-card__photo" id="modalPhoto">
+            <span data-icon="image"></span>
+          </div>
+          <dl class="modal-card__details" id="modalDetails"></dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/icons.js"></script>
+  <script src="js/india-map-data.js"></script>
+  <script src="js/ambassadors-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
