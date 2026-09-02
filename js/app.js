@@ -1099,6 +1099,25 @@
       }
     });
 
+    // Mobile Navigation Drawer Toggle
+    var mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    var mobileNavDrawer = document.getElementById("mobileNavDrawer");
+    if (mobileMenuBtn && mobileNavDrawer) {
+      mobileMenuBtn.addEventListener("click", function () {
+        var isOpen = !mobileNavDrawer.hidden;
+        mobileNavDrawer.hidden = isOpen;
+        mobileMenuBtn.setAttribute("aria-expanded", !isOpen);
+      });
+
+      var mobileLinks = mobileNavDrawer.querySelectorAll(".mobile-nav-link");
+      mobileLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileNavDrawer.hidden = true;
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
     // Category tabs
     var catTabs = document.querySelectorAll(".cat-tab");
     catTabs.forEach(function (tab) {
