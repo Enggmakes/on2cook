@@ -872,9 +872,14 @@ img {
 
 /* Roster Editorial Panel */
 .roster-editorial-panel {
+  background: var(--bg-cream);
+  border: 1.5px solid var(--border-ruler);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-editorial);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .flow-bar {
@@ -923,60 +928,68 @@ img {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--ink-secondary);
+  color: var(--brand-red);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  transition: opacity 0.15s ease;
 }
 
 .view-all-btn:hover {
-  color: var(--brand-red);
+  opacity: 0.75;
+}
+
+.drill-info-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .drill-state-title {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 1.65rem;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   color: var(--ink-primary);
+  margin-bottom: 0.25rem;
 }
 
 .drill-state-meta {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--ink-secondary);
 }
 
 .city-chips {
   display: flex;
-  gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .city-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  height: 34px;
-  padding: 0 0.95rem;
-  background: var(--bg-cream);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-sand);
   border: 1px solid var(--border-ruler);
   border-radius: var(--radius-pill);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 600;
   color: var(--ink-primary);
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
 }
 
 .city-chip:hover {
-  background: var(--ink-primary);
-  color: var(--bg-sand);
+  border-color: var(--ink-primary);
 }
 
 .city-chip.is-active {
-  background: var(--brand-red);
-  border-color: var(--brand-red);
-  color: #fff;
+  background: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: var(--bg-sand);
 }
 
 .city-chip__count {
@@ -986,32 +999,53 @@ img {
 }
 
 /* ==========================================================================
-   Sleek & Proportionate Ambassador Cards (Compact Redesign)
+   Sleek 2-Column Ambassador Grid with Fixed Height & Smooth Scroll
    ========================================================================== */
 .editorial-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 6px;
+  align-content: start;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-red) rgba(36, 33, 30, 0.06);
+}
+
+.editorial-card-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.editorial-card-grid::-webkit-scrollbar-track {
+  background: rgba(36, 33, 30, 0.05);
+  border-radius: 3px;
+}
+
+.editorial-card-grid::-webkit-scrollbar-thumb {
+  background: var(--brand-red);
+  border-radius: 3px;
 }
 
 .id-card {
-  background: var(--bg-cream);
-  border: 1.5px solid var(--border-ruler);
+  background: var(--bg-sand);
+  border: 1px solid var(--border-ruler);
   border-radius: var(--radius-sm);
-  padding: 1rem 1.15rem;
+  padding: 0.85rem 0.95rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.85rem;
-  box-shadow: var(--shadow-editorial);
-  transition: all 0.2s ease;
+  gap: 0.65rem;
+  box-shadow: 0 2px 6px rgba(36, 33, 30, 0.04);
+  transition: all 0.18s ease;
   cursor: pointer;
   text-align: left;
 }
 
 .id-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--ink-primary);
+  transform: translateY(-2px);
+  border-color: var(--brand-red);
+  background: #FFF;
   box-shadow: var(--shadow-hover);
 }
 
@@ -1019,36 +1053,36 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .id-card__badge {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.15rem 0.55rem;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
   border-radius: var(--radius-pill);
-  background: var(--bg-sand);
-  border: 1px solid var(--border-ruler);
+  background: rgba(36, 33, 30, 0.06);
+  border: 1px solid var(--border-ruler-light);
   color: var(--ink-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 170px;
+  max-width: 140px;
 }
 
 .id-card__arrow {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--ink-primary);
   color: var(--bg-sand);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -1056,17 +1090,17 @@ img {
 .id-card__profile-row {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .id-card__avatar {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--ink-primary);
   color: var(--bg-sand);
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1081,7 +1115,7 @@ img {
 
 .id-card__name {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -1092,7 +1126,7 @@ img {
 }
 
 .id-card__brand {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--ink-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -1101,7 +1135,7 @@ img {
 
 .id-card__bottom {
   border-top: 1px solid var(--border-ruler);
-  padding-top: 0.65rem;
+  padding-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1109,15 +1143,39 @@ img {
 }
 
 .id-card__code {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--brand-red);
+  letter-spacing: 0.02em;
 }
 
 .id-card__city {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--ink-tertiary);
   text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .editorial-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .directory-grid {
+    grid-template-columns: 1fr;
+  }
+  .editorial-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .editorial-card-grid {
+    grid-template-columns: 1fr;
+    max-height: 440px;
+  }
 }
 
 .load-more-btn {
