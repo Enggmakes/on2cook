@@ -429,28 +429,35 @@ img {
 
 /* Hero Col 3: Clean Hubs Live Preview */
 .hero-col--visual {
-  padding: 2.5rem 2rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-card-preview {
   background: var(--bg-cream);
   border: 1.5px solid var(--border-ruler);
   border-radius: var(--radius-sm);
-  padding: 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
   box-shadow: var(--shadow-editorial);
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-preview-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .hero-badge-pill {
@@ -476,16 +483,21 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hub-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   background: var(--bg-sand);
   border: 1px solid var(--border-ruler);
   border-radius: var(--radius-xs);
-  padding: 0.65rem 0.85rem;
+  padding: 0.6rem 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .hub-item__dot {
@@ -505,14 +517,17 @@ img {
 
 .hub-item__info strong {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--ink-primary);
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hub-item__info span {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--ink-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -521,7 +536,7 @@ img {
 
 .hub-tag {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   padding: 0.15rem 0.45rem;
   border-radius: var(--radius-pill);
@@ -529,17 +544,24 @@ img {
   color: var(--ink-primary);
   border: 1px solid var(--border-ruler);
   white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hero-card-meta {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   border-top: 1px solid var(--border-ruler);
   padding-top: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-card-code {
@@ -553,7 +575,9 @@ img {
 .hero-stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .stat-box {
