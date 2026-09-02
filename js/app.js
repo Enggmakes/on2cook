@@ -572,6 +572,28 @@
     els.statTotal.textContent = ALL.length;
     els.statStates.textContent = Object.keys(states).length;
     els.statCities.textContent = Object.keys(cities).length;
+    renderHeroActiveHubs();
+  }
+
+  function renderHeroActiveHubs() {
+    var listEl = document.getElementById("heroHubList");
+    if (!listEl) return;
+    if (!ALL.length) {
+      listEl.innerHTML = '<div class="hub-item"><div class="hub-item__dot"></div><div class="hub-item__info"><strong>All States</strong><span>Syncing live network…</span></div></div>';
+      return;
+    }
+    listEl.innerHTML = ALL.slice(0, 4).map(function (a) {
+      var tag = a.kitchenType || a.profile || "Ambassador";
+      if (tag.length > 18) tag = tag.slice(0, 16) + "…";
+      return '<div class="hub-item">' +
+        '<div class="hub-item__dot"></div>' +
+        '<div class="hub-item__info">' +
+          '<strong>' + escapeHtml(a.state) + '</strong>' +
+          '<span>' + escapeHtml(a.city) + ' · ' + escapeHtml(a.name) + '</span>' +
+        '</div>' +
+        '<span class="hub-tag">' + escapeHtml(tag) + '</span>' +
+      '</div>';
+    }).join("");
   }
 
   // ---------------------------------------------------------------------
